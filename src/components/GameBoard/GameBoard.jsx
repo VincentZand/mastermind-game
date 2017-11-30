@@ -2,6 +2,7 @@ import React from 'react';
 import GuessRow from '../GuessRow/GuessRow';
 //CSS Stylesheet
 import './GameBoard.css'
+
 const GameBoard = (props) => {
     return (
         <div className='GameBoard'>
@@ -12,6 +13,7 @@ const GameBoard = (props) => {
             rowIdx={idx}
             currentGuess={idx === (props.guesses.length - 1)}
             key={idx}
+            handlePegClick={props.handlePegClick}
             />
             )}
         </div>

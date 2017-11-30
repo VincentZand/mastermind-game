@@ -1,12 +1,17 @@
 .App {
-  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
 }
 
-.App-header {
-  background-color: #222;
-  height: 50px;
-  padding: 10px;
-  color: white;
-  font-size: 22px;
-  text-align: center;
+.App-game {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.App-controls {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  margin-left: 20px;
 }
