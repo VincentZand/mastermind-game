@@ -3,7 +3,7 @@ import React from 'react';
 const ColorPeg = (props) => {
     return (
         <div>
-            Colorful Peg
+            {props.color}
         </div>
     );
 }
