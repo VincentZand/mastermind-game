@@ -19,7 +19,7 @@ const GuessRow = (props) => {
         currentGuess={props.currentGuess}
         handlePegClick={props.handlePegClick}
         />
-        {props.currentGuess ? <ScoreButton codes={props.guess.code} /> : <GuessScore score={props.guess.score} /> }
+        {props.currentGuess ? <ScoreButton handleScoreCheck={props.handleScoreCheck} codes={props.guess.code} /> : <GuessScore score={props.guess.score} /> }
         </div>
     );
 }

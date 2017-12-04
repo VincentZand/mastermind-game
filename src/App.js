@@ -82,6 +82,46 @@ class App extends Component {
     this.setState({guesses: copyGuesses});
   }
 
+  handleScoreCheck = () => {
+    let currentGuessIdx = this.state.guesses.length -1;
+
+    // computed score to modify the guess code and secret code
+    let guessCodeCopy = [...this.state.guesses[currentGuessIdx].code];
+    let secretCodeCopy = [...this.state.code];
+
+    let perfect = 0, almost = 0;
+
+    // first pass computes number of 'perfect'
+    guessCodeCopy.forEach((code, idx) => {
+      if (secretCodeCopy[idx] === code) {
+        perfect++;
+        guessCodeCopy[idx] = secretCodeCopy[idx] = null; //ensures doesn't match again
+      }
+    });
+
+    // second pass check numbers of 'almost'
+    guessCodeCopy.forEach((code, idx) => {
+      if (code === null) return;
+      let foundIdx = secretCodeCopy.indexOf(code);
+      if (foundIdx > - 1) {
+        almost++;
+        secretCodeCopy[foundIdx] = null;
+      }
+    });
+
+    // update with new object/array guesses
+    let guessesCopy = [...this.state.guesses];
+
+    // set scores
+    guessesCopy[currentGuessIdx].score.perfect = perfect;
+    guessesCopy[currentGuessIdx].score.almost = almost;
+
+    // getNewGuess if !== winner
+    if (perfect !== 4) guessesCopy.push(this.getNewGuess());
+    // update with new guesses array
+    this.setState({guesses: guessesCopy});
+  }
+
 
   // Lifecycle Methods
 
@@ -95,6 +135,7 @@ class App extends Component {
             guesses={this.state.guesses}
             colors={this.state.colors}
             handlePegClick={this.handlePegClick}
+            handleScoreCheck={this.handleScoreCheck}
           />
           <div className="App-controls">
             <ColorPicker 

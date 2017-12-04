@@ -4,7 +4,7 @@ import './ColorPicker.css'
 
 const ColorPicker = (props) => {
     return (
-        <div>
+        <div className="ColorPicker">
             {props.colors.map((color, idx) => 
             <div 
             className="ColorPicker-color"
