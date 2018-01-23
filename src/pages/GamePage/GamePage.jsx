@@ -19,7 +19,7 @@ const GamePage = (props) => {
           guesses={props.guesses}
           colors={props.colors}
           handlePegClick={props.handlePegClick}
-          handleScoreClick={props.handleScoreClick}
+          handleScoreCheck={props.handleScoreCheck}
         />
         <div className="GamePage-controls">
           <ColorPicker
@@ -34,7 +34,7 @@ const GamePage = (props) => {
           isTiming={props.isTiming}
           />
           <Link className='btn btn-default' style={{margin: '0 10px'}} to='/settings'>Difficulty</Link>
-          <NewGameButton handleNewGameClick={props.handleNewGameClick}/>
+          <NewGameButton handleNewGame={props.handleNewGame}/>
         </div>
       </div>
       <footer className='header-footer'>{(winTries ? `You Won in ${winTries} Guesses!` : 'Good Luck!')}</footer>

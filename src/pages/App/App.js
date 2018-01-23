@@ -17,20 +17,12 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = Object.assign(
-      {difficultyLevel: 0, colors: colorTable[0].colors, scores: []},
+      {difficultyLevel: 0, colors: colorTable[0].colors},
       this.getInitialState()
     );
   }
 
   // Helper methods
-
-  componentWillMount() {
-    console.log('App: componentWillMount')
-  }
-
-  componentDidMount() {
-    console.log('App; componentDidMount')
-  }
 
   getInitialState() {
     return {
@@ -76,42 +68,42 @@ class App extends Component {
   handlePegClick = (pegIdx) => {
     let currentGuessIdx = this.state.guesses.length - 1;
 
-    // get copy of state.guesses
-    let copyGuesses = [...this.state.guesses];
+    // Always replace objects/arrays with NEW versions
+    let guessesCopy = [...this.state.guesses];
+    let codeArrCopy = [...guessesCopy[currentGuessIdx].code];
 
-    // get copy of code array of the last guess
-    let copyCode = [...copyGuesses[currentGuessIdx].code];
+    // Update the NEW array
+    codeArrCopy[pegIdx] = this.state.selColorIdx;
 
-    // change copy of code array
-    copyCode[pegIdx] = this.state.selColorIdx;
+    // Update the NEW guesses array
+    guessesCopy[currentGuessIdx].code = codeArrCopy;
 
-    // put copy code into copy guess
-    copyGuesses[currentGuessIdx].code = copyCode;
-
-    // setState with new guesses
-    this.setState({guesses: copyGuesses});
+    // Update state with the NEW guesses array
+    this.setState({
+      guesses: guessesCopy
+    });
   }
 
   handleScoreCheck = () => {
     let currentGuessIdx = this.state.guesses.length - 1;
 
-    // compute score will modify guessed code and secret code, so create copies of originals
-
+    // Computing the score will modify the guessed code and the
+    // secret code, therefore create copies of the originals
     let guessCodeCopy = [...this.state.guesses[currentGuessIdx].code];
     let secretCodeCopy = [...this.state.code];
 
     let perfect = 0, almost = 0;
 
-    // first pass computes number of 'perfect'
+    // First pass computes number of "perfect"
     guessCodeCopy.forEach((code, idx) => {
       if (secretCodeCopy[idx] === code) {
         perfect++;
-        // ensure doesn't match again
+        // ensure does not match again
         guessCodeCopy[idx] = secretCodeCopy[idx] = null;
       }
     });
 
-    // second pass computes number of 'almost'
+    // Second pass computes number of "almost"
     guessCodeCopy.forEach((code, idx) => {
       if (code === null) return;
       let foundIdx = secretCodeCopy.indexOf(code);
@@ -121,21 +113,20 @@ class App extends Component {
       }
     });
 
-    // state must only be updated with new object/arrays
-    let copyGuesses = [...this.state.guesses];
+    // State must only be updated with NEW objects/arrays
+    let guessesCopy = [...this.state.guesses];
 
-    // set scores
-    copyGuesses[currentGuessIdx].score.perfect = perfect;
-    copyGuesses[currentGuessIdx].score.almost = almost;
+    // Set scores
+    guessesCopy[currentGuessIdx].score.perfect = perfect;
+    guessesCopy[currentGuessIdx].score.almost = almost;
 
-    // add new guess if not a winner
-    if (perfect !== 4) copyGuesses.push(this.getNewGuess());
+    // Add a new guess if not a winner
+    if (perfect !== 4) guessesCopy.push(this.getNewGuess());
 
-    // lastly, update state with new guesses array
-    this.setState(prevState => ({
-      guesses: copyGuesses,
-      finalTime: (perfect === 4) ? prevState.elapsedTime : 0
-    }));
+    // Finally, update the state with the NEW guesses array
+    this.setState({
+      guesses: guessesCopy
+    });
 }
 
   handleTick = () => {
