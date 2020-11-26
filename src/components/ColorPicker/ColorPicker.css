@@ -16,4 +16,5 @@
     border-radius: 50%;
     opacity: 1;
     cursor: pointer;
+    box-shadow: 2px 2px 2px grey;
 }

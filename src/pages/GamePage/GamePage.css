@@ -7,6 +7,7 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
+ 
 }
 
 .GamePage-controls {
@@ -14,9 +15,11 @@
   flex-flow: column nowrap;
   justify-content: space-between;
   margin-left: 20px;
+  text-align: center;
 }
 
 .GamePage-nav {
   width: 115px;
 }
+
 

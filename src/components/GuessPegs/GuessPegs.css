@@ -3,4 +3,6 @@
     flex-flow: row nowrap;
     align-items: center;
     margin: 0 20px;
+    box-shadow: 1px 1px 1px gray;
+ 
 }

@@ -7,7 +7,7 @@ const NewGameButton = (props) => {
         style={{margin: 10}}
         onClick={props.handleNewGame}
         >
-            New Game
+            Nieuw spel
         </button>
     );
 }

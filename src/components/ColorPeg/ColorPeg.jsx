@@ -8,7 +8,7 @@ const ColorPeg = (props) => {
         borderRadius: '50%',
         backgroundColor: props.color,
         opacity: 0.85,
-        border: props.color || '1px dashed grey',
+        border: props.color || '2px dashed gray',
         cursor: props.currentGuess && 'pointer'
     };
 

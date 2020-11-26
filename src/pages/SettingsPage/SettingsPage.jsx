@@ -38,12 +38,12 @@ const SettingsPage = (props, context) => {
 
   return (
     <div className='Settings'>
-      <header className='header-footer'>Set Difficulty Level</header>
+      <header className='header-footer'>Moeilijkheidsgraad aanpassen</header>
       <div>
         {levels}
       </div>
       <div>
-        <Link className='Settings-cancel btn btn-default btn-sm' to='/'>Cancel</Link>
+        <Link className='Settings-cancel btn btn-default btn-sm' to='/'>Annuleren</Link>
       </div>
     </div>
   );

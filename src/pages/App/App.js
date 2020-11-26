@@ -8,9 +8,9 @@ import GamePage from '../GamePage/GamePage';
 import SettingsPage from '../SettingsPage/SettingsPage';
 
 let colorTable = [
-  {name: 'Easy', colors: ['#00A399', '#B2D969', '#FAD02F', '#F04F50']},
-  {name: 'Moderate', colors: ['#00A399', '#B2D969', '#FAD02F', '#F04F50', '#E58826']},
-  {name: 'Difficult', colors: ['#00A399', '#B2D969', '#FAD02F', '#F04F50', '#E58826', '#555E7B']}
+  {name: 'Makkelijk', colors: ['#00A399', '#B2D969', '#FAD02F', '#F04F50']},
+  {name: 'Gevorderd', colors: ['#00A399', '#B2D969', '#FAD02F', '#F04F50', '#E58826']},
+  {name: 'Moeilijk', colors: ['#00A399', '#B2D969', '#FAD02F', '#F04F50', '#E58826', '#555E7B']}
 ];
 
 class App extends Component {
@@ -138,7 +138,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <header className='header-footer'>R E A C T &nbsp;&nbsp; M A S T E R M I N D</header>
+        <header className='header-footer'>MASTERMIND SPEL</header>
         <Router>
           <Switch>
             <Route exact path ='/' render={() =>
