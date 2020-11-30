@@ -7,10 +7,10 @@ const GuessScore = ({ score }) => {
     'I'.repeat(4 - score.perfect - score.almost)).split('');
   
   let baseStyle = {
-    width: 10,
-    height: 10,
+    width: 13,
+    height: 13,
     margin: 1,
-    border: '2px solid',
+    border: '1px solid',
     borderRadius: '50%'
   };
 

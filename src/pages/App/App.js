@@ -7,6 +7,9 @@ import './App.css';
 import GamePage from '../GamePage/GamePage';
 import SettingsPage from '../SettingsPage/SettingsPage';
 
+
+
+
 let colorTable = [
   {name: 'Makkelijk', colors: ['#00A399', '#B2D969', '#FAD02F', '#F04F50']},
   {name: 'Gevorderd', colors: ['#00A399', '#B2D969', '#FAD02F', '#F04F50', '#E58826']},
@@ -138,7 +141,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <header className='header-footer'>MASTERMIND SPEL</header>
+        <header className='header-footer'>Mastermind</header>
         <Router>
           <Switch>
             <Route exact path ='/' render={() =>
@@ -169,6 +172,8 @@ class App extends Component {
     );
   }
 }
+
+
 
 
 export default App;

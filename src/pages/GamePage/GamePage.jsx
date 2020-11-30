@@ -21,7 +21,7 @@ const GamePage = (props) => {
           handlePegClick={props.handlePegClick}
           handleScoreCheck={props.handleScoreCheck}
         />
-        <div className="GamePage-controls">Kies een kleur:
+        <div className="GamePage-controls"><b>Kies een kleur:</b><br></br>
           <ColorPicker
             handleColorSelection={props.handleColorSelection}
             colors={props.colors}
@@ -37,7 +37,10 @@ const GamePage = (props) => {
           <NewGameButton handleNewGame={props.handleNewGame}/>
         </div>
       </div>
-      <footer className='header-footer'>{(winTries ? `U Won in ${winTries} pogingen!` : 'Probeer de code op te lossen door de juiste kleurcode in te vullen.')}</footer>
+      <footer className='header-footer'>{(winTries ? `U won in ${winTries} pogingen!` : 'Probeer de code op te lossen door de juiste kleurcode in te vullen.')}</footer>
+      <button id="modal-button">Open Modal</button>
+      
+      <footer>&copy; Vincent Zandstra</footer>
     </div>
   );
 

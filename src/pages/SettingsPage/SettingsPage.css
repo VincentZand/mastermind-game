@@ -12,8 +12,9 @@
 }
 
 .Settings-level-row button {
-  width: 86px;
+  width: 150px;
   margin: 10px;
+  font-weight: 600;
 }
 
 .Settings-level-colors {

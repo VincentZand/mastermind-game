@@ -22,4 +22,17 @@
   width: 115px;
 }
 
+#modal-button {
+  width: 100px;
+  background-color: black;
+  color: white;
+  border-color: black;
+  
+}
+
+footer {
+  color: blue;
+  text-align: center;
+}
+
 
