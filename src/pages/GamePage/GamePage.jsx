@@ -38,7 +38,7 @@ const GamePage = (props) => {
         </div>
       </div>
       <footer className='header-footer'>{(winTries ? `U won in ${winTries} pogingen!` : 'Probeer de code op te lossen door de juiste kleurcode in te vullen.')}</footer>
-      <button id="modal-button">Open Modal</button>
+   
       
       <footer>&copy; Vincent Zandstra</footer>
     </div>

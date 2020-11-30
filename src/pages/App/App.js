@@ -6,6 +6,8 @@ import {
 import './App.css';
 import GamePage from '../GamePage/GamePage';
 import SettingsPage from '../SettingsPage/SettingsPage';
+import Modal from '../../components/Modal/Modal';
+
 
 
 
@@ -24,6 +26,15 @@ class App extends Component {
       this.getInitialState()
     );
   }
+  // status van de Modal
+  state = {
+    show: false
+  };
+  showModal = e => {
+    this.setState({
+      show: !this.state.show
+    });
+  };
 
   // Helper methods
 
@@ -168,6 +179,10 @@ class App extends Component {
             }/>
           </Switch>
         </Router>
+        <div className="App">
+        <h2>Dit is een modal window</h2>
+        <Modal />
+      </div>
       </div>
     );
   }
