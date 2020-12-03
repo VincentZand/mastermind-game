@@ -7,8 +7,8 @@ const GuessScore = ({ score }) => {
     'I'.repeat(4 - score.perfect - score.almost)).split('');
   
   let baseStyle = {
-    width: 13,
-    height: 13,
+    width: '6px',
+    height: '6px',
     margin: 1,
     border: '1px solid',
     borderRadius: '50%'

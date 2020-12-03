@@ -10,6 +10,7 @@
     "react": "^16.1.1",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^16.1.1",
+    "react-modal": "^3.12.1",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17",
     "serve-favicon": "^2.4.5"

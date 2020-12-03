@@ -6,7 +6,7 @@ import {
 import './App.css';
 import GamePage from '../GamePage/GamePage';
 import SettingsPage from '../SettingsPage/SettingsPage';
-import Modal from '../../components/Modal/Modal';
+
 
 
 
@@ -19,6 +19,9 @@ let colorTable = [
 ];
 
 class App extends Component {
+
+  
+
   constructor(props) {
     super(props);
     this.state = Object.assign(
@@ -151,6 +154,7 @@ class App extends Component {
 
   render() {
     return (
+      
       <div>
         <header className='header-footer'>Mastermind</header>
         <Router>
@@ -179,11 +183,16 @@ class App extends Component {
             }/>
           </Switch>
         </Router>
+      
+          
         <div className="App">
-        <h2>Dit is een modal window</h2>
-        <Modal />
+       
+  
+        
+        
       </div>
       </div>
+      
     );
   }
 }
